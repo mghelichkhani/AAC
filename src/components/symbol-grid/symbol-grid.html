@@ -1,0 +1,6 @@
+<div *ngFor="let symbol of this.dataProvider.symbols;" (click)="addToSentence(symbol)">
+  <div class="symbol">
+    <img [src]="symbol.image" />
+    <span>{{ symbol.caption }}</span>
+  </div>
+</div>

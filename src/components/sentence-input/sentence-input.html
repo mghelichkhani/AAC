@@ -1,0 +1,6 @@
+<div *ngFor="let symbol of this.sentenceProvider.sentence; let i = index;">
+  <div class="symbol" (click)="this.sentenceProvider.eraseSymbolAt(i)">
+    <img [src]="symbol.image" />
+    <span>{{ symbol.caption }}</span>
+  </div>
+</div>

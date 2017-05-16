@@ -1,0 +1,33 @@
+sentence-input {
+  border: 1px solid gray;
+  border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  .symbol {
+    margin: 0 1rem 1rem 0;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    background: #eee;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &:hover {
+      background: red;
+    }
+    img {
+      width: 5rem;
+      height: 5rem;
+      display: block;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    span {
+      display: block;
+      text-align: center;
+      padding-top: 5px;
+    }
+  }
+}

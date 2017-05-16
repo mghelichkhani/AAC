@@ -1,0 +1,31 @@
+symbol-grid {
+  display: flex;
+  flex-wrap: wrap;
+  // .symbol duplicated from sentence input Component
+  .symbol {
+    margin: 0 1rem 1rem 0;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    background: #eee;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &:hover {
+      background: #488aff;
+    }
+    img {
+      width: 10rem;
+      height: 10rem;
+      display: block;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    span {
+      display: block;
+      text-align: center;
+      padding-top: 5px;
+    }
+  }
+}
