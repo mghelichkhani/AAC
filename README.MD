@@ -1,5 +1,6 @@
 ## AAC App
- AAC App Project
+ a Cross Platform Applicaion for Children with Complex Communication Needs
+ (Augmentative and Alternative Communication App - ionic Framework)
 
 ### Prepare
 1. npm install -g ionic cordova
