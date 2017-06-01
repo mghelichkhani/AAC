@@ -1,9 +1,14 @@
-<div *ngFor="let symbol of this.sentenceProvider.sentence; let i = index;">
-  <div class="symbol" (click)="this.sentenceProvider.eraseSymbolAt(i)">
-    <img [src]="symbol.image" />
-    <span>{{ symbol.caption }}</span>
-  </div>
-</div>
-<div *ngIf="!this.sentenceProvider.sentence.length">
-  <h2>Add Symbols</h2>
-</div>
+<ion-grid>
+  <ion-row>
+    <ion-col col-3 col-sm-3 col-md-2
+      *ngFor="let symbol of this.sentenceProvider.sentence; let i = index;">
+      <div class="symbol" (click)="this.sentenceProvider.eraseSymbolAt(i)">
+        <img [src]="symbol.image" />
+        <span>{{ symbol.caption }}</span>
+      </div>
+    </ion-col>
+    <div *ngIf="!this.sentenceProvider.sentence.length">
+      <h2>Add Symbols</h2>
+    </div>
+  </ion-row>
+</ion-grid>

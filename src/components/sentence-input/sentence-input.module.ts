@@ -4,7 +4,7 @@ import { SentenceInput } from './sentence-input';
 
 @NgModule({
   declarations: [
-    SentenceInput,
+    SentenceInput
   ],
   imports: [
     IonicPageModule.forChild(SentenceInput),
