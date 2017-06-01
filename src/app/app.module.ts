@@ -6,6 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SymbolGrid } from '../components/symbol-grid/symbol-grid';
 import { SentenceInput } from '../components/sentence-input/sentence-input';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { SettingsPage } from '../pages/settings.page/settings.page';
+import { OptionsProvider } from '../providers/options.provider';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -15,7 +17,8 @@ import { HomePage } from '../pages/home/home';
     MyApp,
     HomePage,
     SymbolGrid,
-    SentenceInput
+    SentenceInput,
+    SettingsPage
   ],
   imports: [
     BrowserModule,
@@ -26,12 +29,14 @@ import { HomePage } from '../pages/home/home';
     MyApp,
     HomePage,
     SymbolGrid,
-    SentenceInput
+    SentenceInput,
+    SettingsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     TextToSpeech,
+    OptionsProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

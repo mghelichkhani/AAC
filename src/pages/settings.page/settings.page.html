@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+          <img src="../../assets/images/aac-logo.png" class="menu-logo"/>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <ion-item>
+    <ion-label>Speak word on Click</ion-label>
+    <ion-toggle [(ngModel)]="optionsProvider.settings.readOnClick"></ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-label>Add word to sentence on Click</ion-label>
+    <ion-toggle [(ngModel)]="optionsProvider.settings.addOnClick"></ion-toggle>
+  </ion-item>
+</ion-content>
