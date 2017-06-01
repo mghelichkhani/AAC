@@ -1,0 +1,20 @@
+.symbol {
+  background: #eee;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background: #488aff;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px 4px 0 0;
+    overflow: hidden;
+  }
+  span {
+    display: block;
+    text-align: center;
+    padding: 0.2rem;
+  }
+}
