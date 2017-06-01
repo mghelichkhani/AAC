@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { OptionsProvider } from '../providers/options.provider';
 
 @Injectable()
 export class SentenceProvider {
@@ -10,10 +11,19 @@ export class SentenceProvider {
     image: 'http://placehold.it/128x128/f8e6ff?text=I'
   }];
 
-  constructor(private tts: TextToSpeech) {}
+  constructor(private tts: TextToSpeech, private optionsProvider: OptionsProvider) {
+    console.log('inside settings page constructor:', optionsProvider.settings);
+  }
 
   addSymbol(symbol) {
-    this.sentence.push(symbol);
+    if (this.optionsProvider.settings.readOnClick) {
+      this.tts.speak(symbol.caption);
+      console.info('"' + symbol.caption + '" was spoken');
+    }
+    if (this.optionsProvider.settings.addOnClick) {
+      console.log(this.optionsProvider.getReadOnClick());
+      this.sentence.push(symbol);
+    }
   }
 
   eraseSymbolAt(index) {
