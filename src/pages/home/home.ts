@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Platform } from 'ionic-angular';
 import { DataProvider } from '../../providers/data.provider';
 import { SentenceProvider } from '../../providers/sentence.provider';
 import { OptionsProvider } from '../../providers/options.provider';
@@ -10,12 +10,14 @@ import { SettingsPage } from '../settings.page/settings.page';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
-  providers: [DataProvider, SentenceProvider]
+  providers: []
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, private dataProvider: DataProvider, private sentenceProvider: SentenceProvider) {
-
+  constructor(public navCtrl: NavController, private dataProvider: DataProvider, private sentenceProvider: SentenceProvider, private platform: Platform) {
+    this.platform.ready().then(() => {
+      console.info('Platform is Ready');
+    });
   }
 
   load() {

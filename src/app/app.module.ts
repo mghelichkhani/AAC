@@ -8,6 +8,9 @@ import { SentenceInput } from '../components/sentence-input/sentence-input';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { SettingsPage } from '../pages/settings.page/settings.page';
 import { OptionsProvider } from '../providers/options.provider';
+import { SentenceProvider } from '../providers/sentence.provider';
+import { DataProvider } from '../providers/data.provider';
+import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -22,7 +25,8 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,6 +41,8 @@ import { HomePage } from '../pages/home/home';
     SplashScreen,
     TextToSpeech,
     OptionsProvider,
+    DataProvider,
+    SentenceProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -5,11 +5,14 @@ import { OptionsProvider } from '../providers/options.provider';
 @Injectable()
 export class SentenceProvider {
 
-  public sentence: any = [{
-    id: 998,
-    caption: 'I',
-    image: 'http://placehold.it/128x128/f8e6ff?text=I'
-  }];
+  public sentence: any = [
+    {
+      caption: 'i'
+    },
+    {
+      caption: 'hungry'
+    }
+  ];
 
   constructor(private tts: TextToSpeech, private optionsProvider: OptionsProvider) {
     console.log('inside settings page constructor:', optionsProvider.settings);
