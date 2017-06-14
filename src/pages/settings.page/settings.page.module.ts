@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { SettingsPage } from './settings-page';
+import { SettingsPage } from './settings.page';
 
 @NgModule({
   declarations: [

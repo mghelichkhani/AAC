@@ -3,8 +3,8 @@
     <ion-col col-4 col-sm-3 col-md-2 col-lg-1 col-xl-1
       *ngFor="let symbol of this.dataProvider.symbols;" (click)="addToSentence(symbol)">
       <div class="symbol">
-        <img src="/assets/images/symbols/{{symbol.caption}}.png" />
-        <span>{{ symbol.caption }}</span>
+        <img src="{{ symbol.image_url }}" />
+        <span>{{ symbol.name }}</span>
       </div>
     </ion-col>
   </ion-row>
