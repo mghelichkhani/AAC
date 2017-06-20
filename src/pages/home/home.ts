@@ -6,6 +6,7 @@ import { OptionsProvider } from '../../providers/options.provider';
 import { SymbolGrid } from '../../components/symbol-grid';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { SettingsPage } from '../settings.page/settings.page';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'page-home',
@@ -14,7 +15,13 @@ import { SettingsPage } from '../settings.page/settings.page';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, private dataProvider: DataProvider, private sentenceProvider: SentenceProvider, private platform: Platform) {
+  items: FirebaseListObservable<any[]>;
+
+  constructor(public navCtrl: NavController, private dataProvider: DataProvider, private sentenceProvider: SentenceProvider, private platform: Platform, afDB: AngularFireDatabase) {
+    this.items = afDB.list('/');
+
+    // dataProvider.saveGridAs('sample save function');
+
     this.platform.ready().then(() => {
       console.info('Platform is Ready');
     });

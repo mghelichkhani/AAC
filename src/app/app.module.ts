@@ -11,9 +11,21 @@ import { OptionsProvider } from '../providers/options.provider';
 import { SentenceProvider } from '../providers/sentence.provider';
 import { DataProvider } from '../providers/data.provider';
 import { HttpModule } from '@angular/http';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyCFj8MNt76jFZ0gqLXg0egOScYF6B9CPnc",
+  authDomain: "aacapp-61f93.firebaseapp.com",
+  databaseURL: "https://aacapp-61f93.firebaseio.com",
+  projectId: "aacapp-61f93",
+  storageBucket: "aacapp-61f93.appspot.com",
+  messagingSenderId: "272728567968"
+};
 
 @NgModule({
   declarations: [
@@ -26,6 +38,9 @@ import { HomePage } from '../pages/home/home';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     HttpModule
   ],
   bootstrap: [IonicApp],

@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "/home/mori/Projects/AAC/node_modules/angularfire2/firebase3.d.ts",
+    "raw": "file:node_modules/angularfire2/firebase3.d.ts",
+    "typings": "/home/mori/Projects/AAC/node_modules/angularfire2/firebase3.d.ts"
+  }
+}
