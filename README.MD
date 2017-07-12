@@ -14,3 +14,8 @@
 ### Running on Device
 1. cordova platform add android
 2. ionic run android
+
+
+### Todo:
+1. Cordova Text-to-Speech Alternative on Desktop Version
+2. 
