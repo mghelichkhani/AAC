@@ -22,6 +22,10 @@ export class SentenceProvider {
     }
   }
 
+  backspace() {
+    this.sentence.pop()
+  }
+
   eraseSymbolAt(index) {
     this.sentence.splice(index,1);
   }

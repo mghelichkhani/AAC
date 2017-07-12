@@ -1,0 +1,12 @@
+sentence-input {
+  ion-grid {
+    ion-row {
+      padding: 5px;
+       &.symbols-container {
+        min-height: 10rem;
+        border-radius: 2px;
+        border: 1px solid gray;
+      }
+    }
+  }
+}

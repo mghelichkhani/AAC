@@ -1,14 +1,25 @@
 <ion-grid>
   <ion-row>
-    <ion-col col-4 col-sm-3 col-md-2 col-lg-1 col-xl-1
-      *ngFor="let symbol of this.sentenceProvider.sentence; let i = index;">
-      <div class="symbol" (click)="this.sentenceProvider.eraseSymbolAt(i)">
-        <img src="{{ symbol.image_url }}" />
-        <span>{{ symbol.name }}</span>
-      </div>
+    <ion-col col-10>
+      <ion-grid>
+        <ion-row class="symbols-container">
+          <ion-col col-4 col-sm-3 col-md-2 col-lg-1 col-xl-1
+            *ngFor="let symbol of this.sentenceProvider.sentence; let i = index;">
+            <div class="symbol" (click)="this.sentenceProvider.eraseSymbolAt(i)">
+              <img src="{{ symbol.picture.image_url }}" />
+              <span>{{ symbol.name }}</span>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-col>
-    <div *ngIf="!this.sentenceProvider.sentence.length">
-      <h2>Add Symbols</h2>
-    </div>
+    <ion-col col-2>
+        <button ion-button icon-only (click)="sentenceProvider.backspace()">
+          <ion-icon name="backspace"></ion-icon>
+        </button>
+        <button ion-button icon-only (click)="sentenceProvider.speak()">
+          <ion-icon name="play"></ion-icon>
+        </button>
+      </ion-col>
   </ion-row>
 </ion-grid>
