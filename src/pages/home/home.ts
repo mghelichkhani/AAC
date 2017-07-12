@@ -1,11 +1,21 @@
 import { Component } from '@angular/core';
-import { NavController, Platform } from 'ionic-angular';
+import { NavController, Platform, ModalController } from 'ionic-angular';
+import { TextToSpeech } from '@ionic-native/text-to-speech';
+
+// Providers
 import { DataProvider } from '../../providers/data.provider';
 import { SentenceProvider } from '../../providers/sentence.provider';
 import { OptionsProvider } from '../../providers/options.provider';
+
+// Components
 import { SymbolGrid } from '../../components/symbol-grid';
-import { TextToSpeech } from '@ionic-native/text-to-speech';
+
+// Pages
 import { SettingsPage } from '../settings.page/settings.page';
+import { AddsymbolPage } from '../addsymbol.page/addsymbol.page';
+
+
+// Google Firebase
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
@@ -17,7 +27,7 @@ export class HomePage {
 
   items: FirebaseListObservable<any[]>;
 
-  constructor(public navCtrl: NavController, private dataProvider: DataProvider, private sentenceProvider: SentenceProvider, private platform: Platform, afDB: AngularFireDatabase) {
+  constructor(public navCtrl: NavController, private dataProvider: DataProvider, private sentenceProvider: SentenceProvider, private platform: Platform, afDB: AngularFireDatabase, public modalCtrl: ModalController) {
     this.items = afDB.list('/');
 
     // dataProvider.saveGridAs('sample save function');
@@ -25,6 +35,16 @@ export class HomePage {
     this.platform.ready().then(() => {
       console.info('Platform is Ready');
     });
+  }
+
+  openModal() {
+
+    let modal = this.modalCtrl.create(AddsymbolPage);
+    modal.present();
+    modal.onDidDismiss(data => {
+      // TODO: add Chosen Symbol to the current grid
+    });
+
   }
 
   load() {

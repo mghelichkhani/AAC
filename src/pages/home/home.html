@@ -7,7 +7,7 @@
           <img src="./assets/images/aac-logo.png" class="menu-logo"/>
         </ion-title>
         <ion-buttons end>
-          <button (click)="dataProvider.saveGridAs()">
+          <button (click)="dataProvider.saveGrid()">
             <ion-icon name="add"></ion-icon>
           </button>
         </ion-buttons>
@@ -15,9 +15,17 @@
 </ion-header>
 
 <ion-content no-bounce>
-  <sentence-input></sentence-input>
-  <button ion-button clear large  (click)="sentenceProvider.speak()">
-    <ion-icon name="play"></ion-icon>
-  </button>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-1>
+        <button ion-button icon-only (click)="openModal({charNum: 1})">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-11>
+        <sentence-input></sentence-input>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   <symbol-grid></symbol-grid>
 </ion-content>
