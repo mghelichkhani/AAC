@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+          <img src="../../assets/images/aac-logo.png" class="menu-logo"/>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-4 col-sm-3 col-md-2 col-lg-1 col-xl-1
+            *ngFor="let symbol of this.dataProvider.fireItems;">
+            <div class="symbol">
+                <img src="{{ symbol.image_url }}" />
+                <span>{{ symbol.name }}</span>
+            </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

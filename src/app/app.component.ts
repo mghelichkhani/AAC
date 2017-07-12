@@ -3,6 +3,7 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SettingsPage } from '../pages/settings.page/settings.page';
+import { GridsPage } from '../pages/grids.page/grids.page';
 import { HomePage } from '../pages/home/home';
 
 export interface MenuItem {
@@ -26,7 +27,8 @@ export class MyApp {
     this.initializeApp();
     this.appMenuItems = [
       { title: 'Home', component: HomePage, icon: 'text' },
-      { title: 'Settings', component: SettingsPage, icon: 'settings' }
+      { title: 'Settings', component: SettingsPage, icon: 'settings' },
+      { title: 'Grids', component: GridsPage, icon: 'grid' }
     ]
   }
 
