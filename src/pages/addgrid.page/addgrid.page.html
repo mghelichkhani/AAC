@@ -1,0 +1,23 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Save Grid As</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-10>
+        <ion-item>
+          <ion-input type="text" placeholder="Grid Name" [(ngModel)]="gridName"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-2>
+          <button ion-button color="primary" block (click)="saveGridAs(gridName)">Save</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
