@@ -18,4 +18,5 @@
 
 ### Todo:
 1. Cordova Text-to-Speech Alternative on Desktop Version
-2. 
+2. When Adding new Symbols and Grids to Firebase, Check for Duplication and update if already exists.
+3. Firebase Authontication
