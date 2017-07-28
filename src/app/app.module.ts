@@ -9,17 +9,20 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { MyApp } from './app.component';
 import { SymbolGrid } from '../components/symbol-grid/symbol-grid';
 import { SentenceInput } from '../components/sentence-input/sentence-input';
+import { SymbolExplorer } from '../components/symbol-explorer/symbol-explorer';
 
 // Pages
 import { HomePage } from '../pages/home/home';
 import { SettingsPage } from '../pages/settings.page/settings.page';
 import { GridsPage } from '../pages/grids.page/grids.page';
 import { AddsymbolPage } from '../pages/addsymbol.page/addsymbol.page';
+import { AddgridPage } from '../pages/addgrid.page/addgrid.page';
 
 // Providers
 import { OptionsProvider } from '../providers/options.provider';
 import { SentenceProvider } from '../providers/sentence.provider';
 import { DataProvider } from '../providers/data.provider';
+import { FirebaseProvider } from '../providers/firebase.provider';
 
 // REST
 import { HttpModule } from '@angular/http';
@@ -28,6 +31,7 @@ import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+
 export const firebaseConfig = {
   apiKey: "AIzaSyCFj8MNt76jFZ0gqLXg0egOScYF6B9CPnc",
   authDomain: "aacapp-61f93.firebaseapp.com",
@@ -42,10 +46,12 @@ export const firebaseConfig = {
     MyApp,
     HomePage,
     SymbolGrid,
+    SymbolExplorer,
     SentenceInput,
     SettingsPage,
     GridsPage,
-    AddsymbolPage
+    AddsymbolPage,
+    AddgridPage
   ],
   imports: [
     BrowserModule,
@@ -59,11 +65,11 @@ export const firebaseConfig = {
   entryComponents: [
     MyApp,
     HomePage,
-    SymbolGrid,
     SentenceInput,
     SettingsPage,
     GridsPage,
-    AddsymbolPage
+    AddsymbolPage,
+    AddgridPage
   ],
   providers: [
     StatusBar,
@@ -72,6 +78,7 @@ export const firebaseConfig = {
     OptionsProvider,
     DataProvider,
     SentenceProvider,
+    FirebaseProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
