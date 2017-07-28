@@ -45,15 +45,11 @@ export class DataProvider {
   private gridsOnFireDB : FirebaseListObservable<any[]>;
   private symbolsDatabaseList: FirebaseListObservable<any[]>;
   private fireItems: FirebaseListObservable<any[]>;
-  
+
   constructor(private http: Http, private db: AngularFireDatabase, private alertCtrl: AlertController) {
 
     // Firebase DB location for now
-    this.symbolsOnFireDB = this.db.list('/all-symbols');
-    
-    // One simple data fetch for now
-    this.searchSymbols('cat');
-    console.log(this.symbols);
+    this.symbolsOnFireDB = this.db.list('/aac-db/symbols');
   }
 
   getSymbols(queryString: String) {
