@@ -1,0 +1,26 @@
+<ion-grid>
+  <ion-row>
+    <ion-col col-3>
+      <ion-input type="text" value="" placeholder="Board Name"></ion-input>
+    </ion-col>
+    <ion-col col-2>
+      <button ion-button (click)="addNewSymbol()">
+        Add Symbol
+      </button>
+    </ion-col>
+    <ion-col col-2>
+      <button ion-button (click)="saveGridAs()">
+        Save Grid
+      </button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-4 col-sm-3 col-md-2 col-lg-1 col-xl-1
+      *ngFor="let symbol of currentCollection">
+      <div class="symbol" (click)="addToSentence(symbol)" >
+        <img src="{{ symbol.picture.image_url }}" />
+        <span>{{ symbol.name }}</span>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
