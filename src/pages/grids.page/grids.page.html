@@ -13,7 +13,7 @@
     <ion-grid>
         <ion-row>
             <ion-col col-4 col-sm-3 col-md-2 col-lg-1 col-xl-1
-            *ngFor="let symbol of this.dataProvider.fireItems;">
+            *ngFor="let symbol of this.currentCollection;">
             <div class="symbol">
                 <img src="{{ symbol.image_url }}" />
                 <span>{{ symbol.name }}</span>

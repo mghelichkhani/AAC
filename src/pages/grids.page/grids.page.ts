@@ -10,8 +10,18 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 })
 export class GridsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private dataProvider: DataProvider) {
-    dataProvider.getGrids();
+  currentCollection: any = [];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private dataProvider: DataProvider, private db: AngularFireDatabase) {}
+
+  ngOnInit() {
+    let res = [];
+    this.db.list('/aac-db/grids').subscribe(symbols => {
+      symbols.forEach(element => {
+        res.push(element);
+      });
+    })
+    this.currentCollection = res;
   }
 
   ionViewDidLoad() {
